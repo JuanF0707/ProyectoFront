@@ -3,7 +3,7 @@ class Account {
 
     constructor (saldoInicial){
         this.saldo = saldoInicial
-        this.transaction = []
+        this.transactions = []
     }
 
     getSaldo(){
@@ -12,7 +12,7 @@ class Account {
 
     getTransactions(){
 
-        return this.transaction
+        return this.transactions
     }
 
     retirar (monto){
@@ -21,7 +21,7 @@ class Account {
         return false
     }
     this.saldo = this.saldo - monto
-    this.transaction.push(new Transaction("Retiro", monto))
+    this.transactions.push(new Transaction("Retiro", monto))
     return true
     }
 
@@ -33,7 +33,7 @@ class Account {
     }
 
     this.saldo = this.saldo + monto
-    this.transaction.push(new Transaction("Consignacion", monto))
+    this.transactions.push(new Transaction("Consignacion", monto))
     return true
     }
 }

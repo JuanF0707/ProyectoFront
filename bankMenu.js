@@ -186,11 +186,16 @@ class BankMenu{
         let transacciones = usuario.cuenta.getTransactions();
 
         if (transacciones.length === 0) {
-            console.log("No hay transacciones registradas");
-        } else {
-            console.log("=== HISTORIAL ===");
-            transacciones.forEach(t => console.log(t.Mostrar()));
+            prompt("No hay transacciones registradas\n\nPresiona Aceptar para continuar.", "");
+            return;
         }
+
+        let historialTexto = "=== HISTORIAL DE TRANSACCIONES ===\n";
+        transacciones.forEach(t => {
+            historialTexto += t.Mostrar() + "\n";
+        });
+
+        prompt(historialTexto + "\nPresiona Aceptar para continuar.", "");
     }
 
 }

@@ -57,7 +57,7 @@ class Bank {
         
             if (u.cuenta) {
                 saldo = u.cuenta.saldo || 0;
-                transacciones = u.cuenta.transactions || [];
+                transacciones = u.cuenta.transactions || u.cuenta.transaction || [];
             }
 
             
